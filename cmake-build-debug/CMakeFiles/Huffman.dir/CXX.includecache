@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/zaraf/Documents/GitHub/Huffman/Counter.h
+CounterRealization.h
+C:/Users/zaraf/Documents/GitHub/Huffman/CounterRealization.h
+
+C:/Users/zaraf/Documents/GitHub/Huffman/CounterRealization.h
+
+C:/Users/zaraf/Documents/GitHub/Huffman/main.cpp
+iostream
+-
+Counter.h
+C:/Users/zaraf/Documents/GitHub/Huffman/Counter.h
+
