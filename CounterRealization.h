@@ -30,9 +30,10 @@ typename Counter<T>::Element& Counter<T>::operator[](T1 index)
 template<typename T>
 std::ostream& operator<< (std::ostream &out, Counter<T> &counter)
 {
+    out << "[ ";
     for (auto &e: counter.array)
-        out << '[' << e.name << ", " << e.number << "] ";
-
+        out << '(' << e.name << ", " << e.number << ") ";
+    out << "]";
     return out;
 }
 

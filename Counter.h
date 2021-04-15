@@ -14,13 +14,18 @@ private:
 
     class Element
     {
-    private:
     public:
-
         int number;
         T name;
 
         explicit Element(T name): number(0), name(name){};
+
+        Element& operator++();
+        Element& operator--();
+        Element operator++(int);
+        Element operator--(int);
+
+
         friend class Counter;
     };
 
@@ -37,6 +42,38 @@ public:
 
 };
 
+
+template<typename T>
+typename Counter<T>::Element& Counter<T>::Element::operator++()
+{
+    number++;
+    return *this;
+}
+
+template<typename T>
+typename Counter<T>::Element& Counter<T>::Element::operator--()
+{
+    number--;
+    return *this;
+}
+
+template<typename T>
+typename Counter<T>::Element Counter<T>::Element::operator++(int)
+{
+    Element temp(this->name);
+    temp.number = this->number;
+    ++(*this);
+    return temp;
+}
+
+template<typename T>
+typename Counter<T>::Element Counter<T>::Element::operator--(int)
+{
+    Element temp(this->name);
+    temp.number = this->number;
+    --(*this);
+    return temp;
+}
 
 #include "CounterRealization.h"
 
