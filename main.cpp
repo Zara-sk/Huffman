@@ -1,8 +1,12 @@
 #include <iostream>
 #include "Counter.h"
+#include <string>
 
 using namespace std;
 
 int main() {
-    cout << "1" << endl;
+    Counter<char> a;
+    a['F'];
+    a['D'];
+    cout << a;
 }

@@ -7,14 +7,24 @@
 #IncludeRegexTransform: 
 
 C:/Users/zaraf/Documents/GitHub/Huffman/Counter.h
+vector
+-
+utility
+-
+iostream
+-
 CounterRealization.h
 C:/Users/zaraf/Documents/GitHub/Huffman/CounterRealization.h
 
 C:/Users/zaraf/Documents/GitHub/Huffman/CounterRealization.h
+Counter.h
+C:/Users/zaraf/Documents/GitHub/Huffman/Counter.h
 
 C:/Users/zaraf/Documents/GitHub/Huffman/main.cpp
 iostream
 -
 Counter.h
 C:/Users/zaraf/Documents/GitHub/Huffman/Counter.h
+string
+-
 

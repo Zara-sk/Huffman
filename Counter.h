@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <utility>
+#include <iostream>
 
 using namespace std;
 
@@ -10,14 +11,32 @@ template<typename T>
 class Counter
 {
 private:
-    vector<pair<T, int>> array;
+
+    class Element
+    {
+    private:
+    public:
+
+        int number;
+        T name;
+
+        explicit Element(T name): number(0), name(name){};
+        friend class Counter;
+    };
+
     int size;
+    vector<Element> array;
 
 public:
+
     Counter();
-    ~Counter();
+    ~Counter() = default;
+
+    template <typename T1> Counter::Element& operator[](T1 index);
+    template <typename T2> friend ostream& operator<<(ostream &out, Counter<T2> &counter);
 
 };
+
 
 #include "CounterRealization.h"
 
