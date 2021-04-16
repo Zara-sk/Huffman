@@ -37,5 +37,35 @@ std::ostream& operator<< (std::ostream &out, Counter<T> &counter)
     return out;
 }
 
+template<typename T>
+typename Counter<T>::Element& Counter<T>::Element::operator++()
+{
+    number++;
+    return *this;
+}
 
+template<typename T>
+typename Counter<T>::Element& Counter<T>::Element::operator--()
+{
+    number--;
+    return *this;
+}
+
+template<typename T>
+typename Counter<T>::Element Counter<T>::Element::operator++(int)
+{
+    Element temp(this->name);
+    temp.number = this->number;
+    ++(*this);
+    return temp;
+}
+
+template<typename T>
+typename Counter<T>::Element Counter<T>::Element::operator--(int)
+{
+    Element temp(this->name);
+    temp.number = this->number;
+    --(*this);
+    return temp;
+}
 #endif //HUFFMAN_COUNTERREALIZATION_H

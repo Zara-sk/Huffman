@@ -48,38 +48,6 @@ public:
 };
 
 
-template<typename T>
-typename Counter<T>::Element& Counter<T>::Element::operator++()
-{
-    number++;
-    return *this;
-}
-
-template<typename T>
-typename Counter<T>::Element& Counter<T>::Element::operator--()
-{
-    number--;
-    return *this;
-}
-
-template<typename T>
-typename Counter<T>::Element Counter<T>::Element::operator++(int)
-{
-    Element temp(this->name);
-    temp.number = this->number;
-    ++(*this);
-    return temp;
-}
-
-template<typename T>
-typename Counter<T>::Element Counter<T>::Element::operator--(int)
-{
-    Element temp(this->name);
-    temp.number = this->number;
-    --(*this);
-    return temp;
-}
-
 
 #include "CounterRealization.h"
 
