@@ -13,6 +13,8 @@ utility
 -
 iostream
 -
+algorithm
+-
 CounterRealization.h
 C:/Users/zaraf/Documents/GitHub/Huffman/CounterRealization.h
 
@@ -25,6 +27,4 @@ iostream
 -
 Counter.h
 C:/Users/zaraf/Documents/GitHub/Huffman/Counter.h
-string
--
 

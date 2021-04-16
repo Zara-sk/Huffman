@@ -3,12 +3,13 @@
 
 #include "Counter.h"
 
-template<typename T>
-Counter<T>::Counter()
-{
-    size = 0;
-}
 
+template<typename T>
+bool Counter<T>::comparator(Element el1, Element el2) {return el1.number < el2.number;}
+
+
+template<typename T>
+void Counter<T>::sort() {std::sort(this->array.begin(), this->array.end(), comparator);}
 
 template<typename T>
 template<typename T1>
@@ -25,7 +26,6 @@ typename Counter<T>::Element& Counter<T>::operator[](T1 index)
     size++;
     return *e;
 }
-
 
 template<typename T>
 std::ostream& operator<< (std::ostream &out, Counter<T> &counter)

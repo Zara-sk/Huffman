@@ -4,6 +4,7 @@
 #include <vector>
 #include <utility>
 #include <iostream>
+#include <algorithm>
 
 using namespace std;
 
@@ -15,6 +16,7 @@ private:
     class Element
     {
     public:
+
         int number;
         T name;
 
@@ -25,17 +27,20 @@ private:
         Element operator++(int);
         Element operator--(int);
 
-
         friend class Counter;
     };
 
     int size;
     vector<Element> array;
 
+    static bool comparator(Element el1, Element el2);
+
 public:
 
-    Counter();
+    Counter(): size(0){};
     ~Counter() = default;
+
+    void sort();
 
     template <typename T1> Counter::Element& operator[](T1 index);
     template <typename T2> friend ostream& operator<<(ostream &out, Counter<T2> &counter);
@@ -74,6 +79,7 @@ typename Counter<T>::Element Counter<T>::Element::operator--(int)
     --(*this);
     return temp;
 }
+
 
 #include "CounterRealization.h"
 
